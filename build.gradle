@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'com.fdobrotv'
-version = '0.4.0'
+version = '0.4.1'
 sourceCompatibility = '15'
 
 repositories {
@@ -39,7 +39,7 @@ jib {
 		image = 'openjdk:15'
 	}
 	to {
-		image = "fdobrotv/discovery_service:$version"
+		image = "fdobrotv/$rootProject.name:$version"
 		tags = ["$version", 'latest']
 	}
 }

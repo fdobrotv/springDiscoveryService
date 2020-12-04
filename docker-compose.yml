@@ -1,5 +1,10 @@
 version: '3.7'
 
+networks:
+  backend:
+    name: backend
+    driver: bridge
+
 services:
   discovery-service-1.com:
     image: fdobrotv/discovery_service:0.4.0
@@ -10,6 +15,8 @@ services:
       SERVER_PORT: 8761
       HOST_NAME: discovery-service-1.com
       EUREKA_DEFAULT_ZONE: http://discovery-service-2.com:8762/eureka/,http://discovery-service-3.com:8763/eureka/
+    networks:
+      - backend
     ports:
       - "8761:8761"
 
@@ -24,6 +31,8 @@ services:
       SERVER_PORT: 8762
       HOST_NAME: discovery-service-2.com
       EUREKA_DEFAULT_ZONE: http://discovery-service-1.com:8761/eureka/,http://discovery-service-3.com:8763/eureka/
+    networks:
+      - backend
     ports:
       - "8762:8762"
 
@@ -38,5 +47,7 @@ services:
       SERVER_PORT: 8763
       HOST_NAME: discovery-service-3.com
       EUREKA_DEFAULT_ZONE: http://discovery-service-1.com:8761/eureka/,http://discovery-service-2.com:8762/eureka/
+    networks:
+      - backend
     ports:
       - "8763:8763"
