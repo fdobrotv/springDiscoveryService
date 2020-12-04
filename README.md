@@ -8,10 +8,19 @@ Gradle 6.6+
 ## Base URL
 http://localhost:8761/eureka/
 
-## Build and run
+## Build and run replicated
 `gradlew build`
 
+`gradlew jib`
+
+`docker-compose up`
+
+### Or by hands
+#### Default profile without replication
 `gradlew bootRun`
+
+#### Specify profile
+`gradlew bootRun --args='--spring.profiles.active=default'`
 
 ### Replicated setup
 

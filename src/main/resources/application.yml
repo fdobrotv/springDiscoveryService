@@ -1,0 +1,31 @@
+---
+# This default profile is used when running a single instance completely standalone:
+# DO NOT USE the default PROFILE IN PRODUCTION ENVIRONMENT!
+spring:
+  profiles: default
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: discovery-server.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+spring:
+  profiles: peerN
+  application:
+    name: ${APPLICATION_NAME:discovery-service}
+server:
+  port: ${SERVER_PORT}
+eureka:
+  instance:
+    hostname: ${HOST_NAME}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
