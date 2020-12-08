@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: discovery-service
-          image: onggar/discovery-service:latest
+          image: fdobrotv/discovery_service:0.4.0
           ports:
             - containerPort: 8761
