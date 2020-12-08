@@ -35,9 +35,10 @@ Use configuration:
 https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.4.0.RELEASE&packaging=jar&jvmVersion=15&groupId=com.fdobrotv&artifactId=discoveryService&name=discoveryService&description=Base%20project%20for%20microservice%20discovery%20and%20cloud%20routing&packageName=com.fdobrotv.discoveryService&dependencies=cloud-eureka-server
 
 ## Install k8s
-1) install hypervisor (virtualbox)
+1) install hypervisor (virtualbox or hyperkit)
 2) install minikube
 3) install kubectl
 4) minikube config set driver virtualbox
+or hyperkit
 5) minikube start --container-runtime=cri-o
 
