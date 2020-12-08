@@ -5,6 +5,11 @@ Java 15
 
 Gradle 6.6+
 
+### Host name aliases in hosts file
+cat `127.0.0.1 discovery-service-1.com
+127.0.0.1 discovery-service-2.com
+127.0.0.1 discovery-service-3.com` >> /etc/hosts
+
 ## Base URL
 http://localhost:8761/eureka/
 
