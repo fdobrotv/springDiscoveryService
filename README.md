@@ -28,6 +28,7 @@ http://localhost:8761/eureka/
 `gradlew bootRun --args='--spring.profiles.active=default'`
 
 ### Replicated setup
+kubectl create deployment discovery-service-minikube --image=fdobrotv/discovery_service:0.4.0 TODO: To be continued...
 
 ### In single node setup
 Use configuration:
